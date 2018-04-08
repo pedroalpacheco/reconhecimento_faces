@@ -19,12 +19,12 @@ while (True):
         cv2.rectangle(imagem, (x, y), (x + l, y + a), (0, 0, 255), 2)
         if cv2.waitKey(1) &  0xFF == ord('q'):
             imagemFace = cv2.resize(imagemCinza[y:y + a, x:x + 1], (largura, altura))
-            cv2.imwrite("fotos/pessoa." + str(id) + "." + str(amostra) + ".jpg", imagemFace)
+            cv2.imwrite("fotos/pessoa." + str(id) + "." + str(amostra) + ".jpg", imagemCinza)
             print("[Foto" + str(amostra) + "captura dados com sucesso ]")
             amostra += 1
 
     cv2.imshow("Face", imagem)
-    #cv2.waitKey(1)
+    cv2.waitKey(1)
     if (amostra >= numeroAmostras + 1):
         break
 
